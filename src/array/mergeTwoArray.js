@@ -45,4 +45,27 @@ const merge  = (arr1, m, arr2 , n) => {
   return arr1
 }
 
-export default merge
+
+// 生成窗口最大值
+// arr [4，3，5，4，3，3，6，7]，窗口 width 3
+
+const arr = [1, 3, 1, 5, 4, 3, 3, 6, 7]
+
+const getMaxValueFromWindow = (arr = arr, width = 3) => {
+  const res = [];
+  let max = 0;
+  const maxIndex = arr.length - width + 1;
+  // 先获取第一次，前三个中，最大的
+  let temp = arr.slice(0, 3)
+  console.log(temp)
+  max = Math.max(...temp)
+  console.log('max', max)
+  for (let i = width; i < maxIndex; i++) {
+    console.log(arr[i])
+  }
+
+
+}
+
+getMaxValueFromWindow(arr)
+
